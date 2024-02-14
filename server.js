@@ -8,6 +8,8 @@ http.listen(PORT, () => {
     console.log(`listening on port ${PORT}`)
 })
 
+app.use(express.static(__dirname + '/public'))
+
 // creating a route 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html')
