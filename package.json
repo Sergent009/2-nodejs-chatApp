@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Sergent009/2-nodejs-chatApp#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "socket.io": "^4.7.4"
   }
 }

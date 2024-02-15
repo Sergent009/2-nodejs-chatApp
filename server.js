@@ -16,3 +16,16 @@ app.get('/', (req, res) => {
 })
 // till here server is created.
 
+
+// seting up socket.io
+const io = require('socket.io')(http)
+
+io.on('connection', (socket) => {
+    console.log('Connected.....')
+
+    // listening a event named 'message'
+    socket.on('message', (msg) => {
+        // it will send the message to all of those who is connected to server except the one who sends the message.
+        socket.broadcast.emit('message', msg)
+    })
+})
